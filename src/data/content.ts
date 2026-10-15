@@ -42,7 +42,8 @@ export const contentData: Record<Locale, LocaleContent> = {
         }
       ],
       "seoDescription": "Habib Drira, ingénieur Cloud & DevOps à Tunis. Découvrez mes projets en automatisation, CI/CD, Docker, Kubernetes et infrastructure cloud.",
-      "cvUrl": "/cv.pdf"
+      "cvUrl": "/cv.pdf",
+      "portraitUrl": "/portrait.png"
     },
     "projects": [
       {
@@ -783,22 +784,6 @@ export const contentData: Record<Locale, LocaleContent> = {
           }
         ],
         "order": 4
-      },
-      {
-        "id": "exp-5",
-        "company": "Société Nationale des Chemins de Fer Tunisiens (SNCFT)",
-        "title": "Stage d’été · Support informatique",
-        "period": "Juil. — Août 2021",
-        "description": "Maintenance et réparation des postes informatiques pour assurer la continuité des opérations.",
-        "highlights": [
-          {
-            "text": "Support des logiciels de guichet utilisés dans la gestion ferroviaire."
-          },
-          {
-            "text": "Collaboration avec l’équipe technique et documentation des procédures."
-          }
-        ],
-        "order": 5
       }
     ],
     "education": [
@@ -817,14 +802,6 @@ export const contentData: Record<Locale, LocaleContent> = {
         "period": "2020 — 2023",
         "description": "IoT & Systèmes embarqués · Tunis",
         "order": 2
-      },
-      {
-        "id": "edu-3",
-        "school": "Lycée Carthage Présidence",
-        "title": "Baccalauréat en mathématiques",
-        "period": "2016 — 2020",
-        "description": "Carthage · Tunisie",
-        "order": 3
       }
     ],
     "certifications": [
@@ -918,7 +895,8 @@ export const contentData: Record<Locale, LocaleContent> = {
         }
       ],
       "seoDescription": "Habib Drira, Cloud & DevOps engineer in Tunis. Explore my work in automation, CI/CD, Docker, Kubernetes and cloud infrastructure.",
-      "cvUrl": "/cv.pdf"
+      "cvUrl": "/cv.pdf",
+      "portraitUrl": "/portrait.png"
     },
     "projects": [
       {
@@ -1659,22 +1637,6 @@ export const contentData: Record<Locale, LocaleContent> = {
           }
         ],
         "order": 4
-      },
-      {
-        "id": "exp-5",
-        "company": "Société Nationale des Chemins de Fer Tunisiens (SNCFT)",
-        "title": "Summer internship · IT support",
-        "period": "Jul — Aug 2021",
-        "description": "Maintained and repaired computer workstations to support operational continuity.",
-        "highlights": [
-          {
-            "text": "Supported ticket office software used in railway operations."
-          },
-          {
-            "text": "Collaborated with the technical team and documented procedures."
-          }
-        ],
-        "order": 5
       }
     ],
     "education": [
@@ -1693,14 +1655,6 @@ export const contentData: Record<Locale, LocaleContent> = {
         "period": "2020 — 2023",
         "description": "IoT & Embedded Systems · Tunis",
         "order": 2
-      },
-      {
-        "id": "edu-3",
-        "school": "Lycée Carthage Présidence",
-        "title": "Baccalaureate in Mathematics",
-        "period": "2016 — 2020",
-        "description": "Carthage · Tunisia",
-        "order": 3
       }
     ],
     "certifications": [
