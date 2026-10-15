@@ -45,8 +45,8 @@ p { color:var(--muted); }
 .menu-button { display:none; }
 
 /* One continuous background, with restrained borders for the content groups. */
-.hero { min-height:calc(100vh - var(--header-height)); min-height:calc(100dvh - var(--header-height)); display:grid; grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr); gap:48px; align-items:center; padding-block:52px; text-align:left; }
-.hero-terminal-wrapper { width:100%; max-width:440px; justify-self:center; }
+.hero { min-height:calc(100vh - var(--header-height)); min-height:calc(100dvh - var(--header-height)); display:grid; grid-template-columns:minmax(0,350px) minmax(0,1.2fr); gap:54px; align-items:center; padding-block:52px; text-align:left; }
+.hero-terminal-wrapper { width:100%; max-width:350px; justify-self:center; }
 .hero-copy { min-width:0; }
 .hero-greeting { font-size:18px; }
 .hero-role { font-size:clamp(28px,2.8vw,38px); color:var(--accent); font-weight:500; line-height:1.25; letter-spacing:-.03em; margin-top:18px; text-wrap:balance; }
@@ -325,3 +325,4 @@ p { color:var(--muted); }
 
 /* Portrait photo styling in about me */
 .about-portrait { display:block; width:140px; height:140px; object-fit:cover; border:2.5px solid var(--accent); border-radius:50%; box-shadow:0 10px 30px rgba(0,0,0,0.35); margin-bottom:8px; }
+

@@ -15,13 +15,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { profile } = getContent(validLoc)
   return {
     metadataBase: new URL('https://habibdrira.github.io'),
-    title: { default: `${profile.name} — ${profile.role}`, template: `%s — ${profile.name}` },
+    title: { default: profile.name, template: `%s — ${profile.name}` },
     description: profile.seoDescription,
     openGraph: {
       type: 'website',
       siteName: profile.name,
       locale: validLoc === 'fr' ? 'fr_FR' : 'en_US',
-      title: `${profile.name} — ${profile.role}`,
+      title: profile.name,
       description: profile.seoDescription || '',
     },
     icons: { icon: '/favicon.svg' },
@@ -60,3 +60,4 @@ export default async function Layout({ children, params }: { children: React.Rea
     </html>
   )
 }
+

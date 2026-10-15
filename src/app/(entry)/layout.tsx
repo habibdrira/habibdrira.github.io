@@ -1,6 +1,6 @@
 export const metadata = {
   metadataBase: new URL('https://habibdrira.github.io'),
-  title: 'Habib Drira — Ingénieur Cloud & DevOps',
+  title: 'Habib Drira',
 }
 
 export default function EntryLayout({ children }: { children: React.ReactNode }) {
@@ -13,3 +13,4 @@ export default function EntryLayout({ children }: { children: React.ReactNode })
     </html>
   )
 }
+
