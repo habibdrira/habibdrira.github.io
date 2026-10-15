@@ -1,0 +1,53 @@
+export type { Locale, ProfileData, ProjectData, SkillGroupData, ExperienceData, EducationData, CertificationData } from '../data/types'
+export { getContent, type LocaleContent } from '../data/content'
+
+export const validLocale = (locale: string): locale is 'fr' | 'en' => locale === 'fr' || locale === 'en'
+
+export const words = {
+  fr: {
+    about: 'À propos de moi',
+    projects: 'Projets',
+    experience: 'Expériences',
+    skills: 'Compétences',
+    certifications: 'Certifications',
+    education: 'Formation',
+    contact: 'Contact',
+    context: 'Contexte',
+    contribution: 'Ma contribution',
+    outcome: 'Résultat',
+    technologies: 'Technologies',
+    repository: 'Voir le code',
+    website: 'Visiter le site',
+    languages: 'Langues',
+    menu: 'Ouvrir le menu',
+    close: 'Fermer le menu',
+    theme: 'Changer le thème',
+    skip: 'Aller au contenu',
+    empty: 'Aucun projet publié pour le moment.',
+    notFound: 'Cette page n’existe pas.',
+    home: 'Retour à l’accueil',
+  },
+  en: {
+    about: 'About me',
+    projects: 'Projects',
+    experience: 'Experience',
+    skills: 'Skills',
+    certifications: 'Certifications',
+    education: 'Education',
+    contact: 'Contact',
+    context: 'Context',
+    contribution: 'My contribution',
+    outcome: 'Outcome',
+    technologies: 'Technologies',
+    repository: 'View source',
+    website: 'Visit website',
+    languages: 'Languages',
+    menu: 'Open navigation',
+    close: 'Close navigation',
+    theme: 'Change theme',
+    skip: 'Skip to content',
+    empty: 'No projects published yet.',
+    notFound: 'This page could not be found.',
+    home: 'Back to home',
+  },
+} as const
