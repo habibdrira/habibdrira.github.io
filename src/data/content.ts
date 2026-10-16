@@ -294,6 +294,7 @@ export const contentData: Record<Locale, LocaleContent> = {
           }
         ],
         "visual": "pipeline",
+        "repository": "https://github.com/habibdrira/Plateforme-Agricole-de-Precision",
         "featured": false,
         "order": 8
       },
@@ -347,6 +348,7 @@ export const contentData: Record<Locale, LocaleContent> = {
           }
         ],
         "visual": "containers",
+        "repository": "https://github.com/habibdrira/pacman-sdl2",
         "featured": false,
         "order": 10
       },
@@ -363,6 +365,7 @@ export const contentData: Record<Locale, LocaleContent> = {
           }
         ],
         "visual": "containers",
+        "repository": "https://github.com/habibdrira/Exploration-Gamifie-UX-UI",
         "featured": false,
         "order": 11
       },
@@ -388,6 +391,7 @@ export const contentData: Record<Locale, LocaleContent> = {
           }
         ],
         "visual": "pipeline",
+        "repository": "https://github.com/habibdrira/Panneau-de-controle-dacces",
         "featured": false,
         "order": 12
       }
@@ -1147,6 +1151,7 @@ export const contentData: Record<Locale, LocaleContent> = {
           }
         ],
         "visual": "pipeline",
+        "repository": "https://github.com/habibdrira/Plateforme-Agricole-de-Precision",
         "featured": false,
         "order": 8
       },
@@ -1200,6 +1205,7 @@ export const contentData: Record<Locale, LocaleContent> = {
           }
         ],
         "visual": "containers",
+        "repository": "https://github.com/habibdrira/pacman-sdl2",
         "featured": false,
         "order": 10
       },
@@ -1216,6 +1222,7 @@ export const contentData: Record<Locale, LocaleContent> = {
           }
         ],
         "visual": "containers",
+        "repository": "https://github.com/habibdrira/Exploration-Gamifie-UX-UI",
         "featured": false,
         "order": 11
       },
@@ -1241,6 +1248,7 @@ export const contentData: Record<Locale, LocaleContent> = {
           }
         ],
         "visual": "pipeline",
+        "repository": "https://github.com/habibdrira/Panneau-de-controle-dacces",
         "featured": false,
         "order": 12
       }
