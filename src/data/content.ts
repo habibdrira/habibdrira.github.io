@@ -329,6 +329,7 @@ export const contentData: Record<Locale, LocaleContent> = {
           }
         ],
         "visual": "containers",
+        "repository": "https://github.com/habibdrira/E-learning-plateforme",
         "featured": false,
         "order": 9
       },
@@ -394,6 +395,47 @@ export const contentData: Record<Locale, LocaleContent> = {
         "repository": "https://github.com/habibdrira/Panneau-de-controle-dacces",
         "featured": false,
         "order": 12
+      },
+      {
+        "id": "project-site-concours-springboot-angular",
+        "slug": "site-concours-springboot-angular",
+        "title": "Plateforme de gestion de concours",
+        "category": "Full Stack · Spring Boot & Angular",
+        "year": "2023",
+        "description": "Application web complète dédiée à l’organisation et à la gestion de concours. Architecture découplée associant un backend en Java Spring Boot exposant des API REST, une base de données relationnelle MySQL, et une interface utilisateur moderne développée avec Angular.",
+        "technologies": [
+          { "name": "Java" },
+          { "name": "Spring Boot" },
+          { "name": "Angular" },
+          { "name": "TypeScript" },
+          { "name": "MySQL" },
+          { "name": "REST" },
+          { "name": "Git" }
+        ],
+        "visual": "containers",
+        "repository": "https://github.com/habibdrira/Site-Concours-Springboot-Angular",
+        "featured": false,
+        "order": 13
+      },
+      {
+        "id": "project-chatbot-arabe",
+        "slug": "chatbot-arabe",
+        "title": "Chatbot intelligent en langue arabe",
+        "category": "Intelligence Artificielle · NLP",
+        "year": "2023",
+        "description": "Conception et entraînement d’un agent conversationnel en langue arabe basé sur le traitement automatique du langage naturel (NLP). Le modèle s'appuie sur Python, NLTK pour le prétraitement linguistique, Keras et TensorFlow pour l'entraînement d'un réseau neuronal de classification d'intentions, intégré à une interface graphique interactive.",
+        "technologies": [
+          { "name": "Python" },
+          { "name": "TensorFlow" },
+          { "name": "Keras" },
+          { "name": "NLTK" },
+          { "name": "NLP" },
+          { "name": "Git" }
+        ],
+        "visual": "pipeline",
+        "repository": "https://github.com/habibdrira/Chatbot-en-arabe",
+        "featured": false,
+        "order": 14
       }
     ],
     "skills": [
@@ -1186,6 +1228,7 @@ export const contentData: Record<Locale, LocaleContent> = {
           }
         ],
         "visual": "containers",
+        "repository": "https://github.com/habibdrira/E-learning-plateforme",
         "featured": false,
         "order": 9
       },
@@ -1251,6 +1294,47 @@ export const contentData: Record<Locale, LocaleContent> = {
         "repository": "https://github.com/habibdrira/Panneau-de-controle-dacces",
         "featured": false,
         "order": 12
+      },
+      {
+        "id": "project-site-concours-springboot-angular",
+        "slug": "site-concours-springboot-angular",
+        "title": "Examination & Contest Management Platform",
+        "category": "Full Stack · Spring Boot & Angular",
+        "year": "2023",
+        "description": "Full-stack web application dedicated to organizing and managing competitive examinations. Built with a decoupled architecture featuring a robust Java Spring Boot backend exposing REST APIs, a MySQL relational database, and a dynamic frontend built with Angular.",
+        "technologies": [
+          { "name": "Java" },
+          { "name": "Spring Boot" },
+          { "name": "Angular" },
+          { "name": "TypeScript" },
+          { "name": "MySQL" },
+          { "name": "REST" },
+          { "name": "Git" }
+        ],
+        "visual": "containers",
+        "repository": "https://github.com/habibdrira/Site-Concours-Springboot-Angular",
+        "featured": false,
+        "order": 13
+      },
+      {
+        "id": "project-chatbot-arabe",
+        "slug": "chatbot-arabe",
+        "title": "Arabic Intelligent Chatbot",
+        "category": "Artificial Intelligence · NLP",
+        "year": "2023",
+        "description": "Design and training of an intelligent conversational chatbot in Arabic based on Natural Language Processing (NLP). The model leverages Python, NLTK for linguistic preprocessing, Keras and TensorFlow for intent classification neural network training, integrated with an interactive graphical interface.",
+        "technologies": [
+          { "name": "Python" },
+          { "name": "TensorFlow" },
+          { "name": "Keras" },
+          { "name": "NLTK" },
+          { "name": "NLP" },
+          { "name": "Git" }
+        ],
+        "visual": "pipeline",
+        "repository": "https://github.com/habibdrira/Chatbot-en-arabe",
+        "featured": false,
+        "order": 14
       }
     ],
     "skills": [
