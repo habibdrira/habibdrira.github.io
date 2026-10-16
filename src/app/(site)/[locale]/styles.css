@@ -123,27 +123,49 @@ p { color:var(--muted); }
 .profile-detail svg { color:var(--accent); margin-top:2px; }
 .profile-detail small { display:block; color:var(--subtle); margin-top:3px; font-size:11px; }
 
-/* Shared three-column project cards, inspired by krapp.dev sleek rectangular proportions. */
-.projects-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; align-items:stretch; }
-.project-card { display:flex; flex-direction:column; min-width:0; border:1px solid var(--line); border-radius:16px; overflow:hidden; scroll-margin-top:105px; background:var(--surface); transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease; }
-.project-card:hover { border-color:var(--accent); transform:translateY(-3px); box-shadow:0 10px 28px rgba(0,0,0,.22); }
+/* Project cards grid: shared between catalog and home */
+.projects-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; align-items:stretch; }
+.project-card { display:flex; flex-direction:column; min-width:0; border:1px solid var(--line); border-radius:14px; overflow:hidden; scroll-margin-top:105px; background:var(--surface); transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease; }
+.project-card:hover { border-color:var(--accent); }
 .project-card:target { border-color:var(--accent); }
-.project-card-body { display:flex; flex-direction:column; flex:1; padding:20px; }
-.project-card-top { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px; }
-.card-icon { display:grid; place-items:center; width:36px; height:36px; border:1px solid var(--line); background:var(--bg); border-radius:8px; color:var(--accent); flex-shrink:0; }
-.project-meta { display:flex; align-items:center; gap:8px; font-size:11px; letter-spacing:.025em; }
-.project-category { background:rgba(0,210,255,.09); color:var(--accent); padding:3px 9px; border-radius:12px; font-weight:500; font-size:10.5px; border:1px solid rgba(0,210,255,.18); max-width:180px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.project-year { color:var(--subtle); font-size:11px; }
-.project-heading { font-size:17px; font-weight:600; line-height:1.35; margin:0 0 8px; min-height:46px; display:flex; align-items:center; color:var(--text); text-wrap:balance; }
-.project-description { font-size:13px; line-height:1.6; color:var(--muted); margin-bottom:14px; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; text-overflow:ellipsis; height:62px; }
-.project-description p { margin:0; color:var(--muted); }
-.project-stack { margin-top:auto; border-top:1px solid var(--line); padding-top:12px; }
-.project-tags { display:flex; flex-wrap:wrap; gap:6px; }
-.project-tags>span { padding:3px 7px; font-size:10.5px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:5px; }
-.project-tag-more { color:var(--accent) !important; background:rgba(0,210,255,.08) !important; border-color:rgba(0,210,255,.2) !important; }
-.project-links { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
-.project-repository { display:inline-flex; align-items:center; gap:6px; color:var(--accent); font-size:12px; border:1px solid var(--line); border-radius:6px; padding:6px 11px; transition:all .2s ease; background:var(--bg); }
-.project-repository:hover { border-color:var(--accent); background:rgba(0,210,255,.08); }
+
+/* Full project card (used on the complete catalogue page /projects/) */
+.project-card-full .project-card-body { display:flex; flex-direction:column; flex:1; padding:24px; }
+.project-card-full .project-card-top { display:flex; align-items:center; gap:16px; margin-bottom:20px; }
+.project-card-full .card-icon { display:grid; place-items:center; width:44px; height:44px; border:1px solid var(--line); background:var(--bg); border-radius:9px; color:var(--accent); flex-shrink:0; }
+.project-card-full .project-meta { display:flex; flex-direction:column; gap:3px; color:var(--muted); font-size:11px; letter-spacing:.025em; }
+.project-card-full .project-meta>span:last-child { color:var(--subtle); }
+.project-card-full .project-heading { font-size:22px; font-weight:600; line-height:1.35; text-wrap:pretty; margin:0 0 16px; color:var(--text); }
+.project-card-full .project-description { font-size:14px; line-height:1.85; margin:0; flex:1; }
+.project-card-full .project-description p { margin:0; color:var(--muted); }
+.project-card-full .project-description p+p { margin-top:16px; }
+.project-card-full .project-stack { margin-top:24px; border-top:1px solid var(--line); padding-top:18px; }
+.project-card-full .project-stack h4 { font-size:12px; font-weight:500; color:var(--subtle); margin:0 0 10px; }
+.project-card-full .project-tags { display:flex; flex-wrap:wrap; gap:7px; }
+.project-card-full .project-tags>span { padding:4px 8px; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:5px; }
+.project-card-full .project-links { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
+.project-card-full .project-repository { display:inline-flex; align-items:center; gap:8px; color:var(--accent); font-size:13px; border:1px solid var(--line); border-radius:6px; padding:8px 13px; transition:all .2s ease; background:var(--bg); }
+.project-card-full .project-repository:hover { border-color:var(--accent); background:rgba(0,210,255,.08); }
+
+/* Compact project card (used on the homepage for krapp.dev rectangular proportions) */
+.project-card-compact { border-radius:16px; }
+.project-card-compact:hover { transform:translateY(-3px); box-shadow:0 10px 28px rgba(0,0,0,.22); }
+.project-card-compact .project-card-body { display:flex; flex-direction:column; flex:1; padding:20px; }
+.project-card-compact .project-card-top { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px; }
+.project-card-compact .card-icon { display:grid; place-items:center; width:36px; height:36px; border:1px solid var(--line); background:var(--bg); border-radius:8px; color:var(--accent); flex-shrink:0; }
+.project-card-compact .project-meta { display:flex; align-items:center; gap:8px; font-size:11px; letter-spacing:.025em; }
+.project-card-compact .project-category { background:rgba(0,210,255,.09); color:var(--accent); padding:3px 9px; border-radius:12px; font-weight:500; font-size:10.5px; border:1px solid rgba(0,210,255,.18); max-width:180px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.project-card-compact .project-year { color:var(--subtle); font-size:11px; }
+.project-card-compact .project-heading { font-size:17px; font-weight:600; line-height:1.35; margin:0 0 8px; min-height:46px; display:flex; align-items:center; color:var(--text); text-wrap:balance; }
+.project-card-compact .project-description { font-size:13px; line-height:1.6; color:var(--muted); margin-bottom:14px; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; text-overflow:ellipsis; height:62px; flex:none; }
+.project-card-compact .project-description p { margin:0; color:var(--muted); }
+.project-card-compact .project-stack { margin-top:auto; border-top:1px solid var(--line); padding-top:12px; }
+.project-card-compact .project-tags { display:flex; flex-wrap:wrap; gap:6px; }
+.project-card-compact .project-tags>span { padding:3px 7px; font-size:10.5px; color:var(--muted); background:var(--bg); border:1px solid var(--line); border-radius:5px; }
+.project-card-compact .project-tag-more { color:var(--accent) !important; background:rgba(0,210,255,.08) !important; border-color:rgba(0,210,255,.2) !important; }
+.project-card-compact .project-links { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+.project-card-compact .project-repository { display:inline-flex; align-items:center; gap:6px; color:var(--accent); font-size:12px; border:1px solid var(--line); border-radius:6px; padding:6px 11px; transition:all .2s ease; background:var(--bg); }
+.project-card-compact .project-repository:hover { border-color:var(--accent); background:rgba(0,210,255,.08); }
 
 .experience-list { border-top:1px solid var(--line); }
 .experience-row { display:grid; grid-template-columns:155px 1fr 1.35fr; gap:28px; padding:29px 0; border-bottom:1px solid var(--line); }

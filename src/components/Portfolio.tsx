@@ -90,7 +90,7 @@ export function Portfolio({ locale }: { locale: Locale }) {
     projects: (
       <section className="section container" id="projects">
         <SectionHeading title={fr ? 'Mes projets' : 'My projects'} />
-        <div className="projects-grid">{visibleProjects.map(project => <ProjectCard key={project.id} project={project} locale={locale} />)}</div>
+        <div className="projects-grid">{visibleProjects.map(project => <ProjectCard key={project.id} project={project} locale={locale} compact />)}</div>
         {projects.length > 0 && (
           <div className="section-bottom">
             <Link className="all-projects-link" href={`/${locale}/projects/`}>
