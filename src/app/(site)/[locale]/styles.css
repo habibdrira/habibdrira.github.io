@@ -96,7 +96,7 @@ p { color:var(--muted); }
 .catalog-heading p { margin-top:18px; }
 .catalog-count { display:inline-block; font-size:12px; color:var(--accent); padding:5px 12px; border:1px solid var(--line); border-radius:20px; margin-top:20px; }
 .project-stack h4 { font-size:12px; font-weight:500; color:var(--subtle); }
-.section { padding-block:76px; border-top:1px solid var(--line); }
+.section { padding-block:76px; border-top:1px solid var(--line); scroll-margin-top:80px; }
 .section-heading { text-align:center; max-width:680px; margin:0 auto 38px; }
 .section-heading .eyebrow { justify-content:center; font-size:10px; letter-spacing:.12em; }
 .section-heading h2 { margin-top:0; }
