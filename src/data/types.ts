@@ -51,7 +51,7 @@ export interface SkillItem {
 export interface SkillGroupData {
   id: string
   title: string
-  icon?: 'cloud' | 'layers' | 'workflow' | 'activity' | 'code' | 'server'
+  icon?: 'cloud' | 'layers' | 'workflow' | 'activity' | 'code' | 'server' | 'globe' | 'check'
   items: SkillItem[]
   order: number
 }

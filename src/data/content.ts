@@ -440,330 +440,164 @@ export const contentData: Record<Locale, LocaleContent> = {
     ],
     "skills": [
       {
-        "id": "skill-1",
+        "id": "skill-cloud",
         "title": "Cloud & infrastructure",
         "icon": "cloud",
         "items": [
-          {
-            "name": "AWS"
-          },
-          {
-            "name": "Microsoft Azure"
-          },
-          {
-            "name": "Oracle Cloud"
-          },
-          {
-            "name": "OpenStack"
-          }
+          { "name": "AWS" },
+          { "name": "Microsoft Azure" },
+          { "name": "Oracle Cloud" },
+          { "name": "OpenStack" }
         ],
         "order": 1
       },
       {
-        "id": "skill-2",
+        "id": "skill-containers",
         "title": "Conteneurs & orchestration",
         "icon": "layers",
         "items": [
-          {
-            "name": "Docker"
-          },
-          {
-            "name": "Docker Compose"
-          },
-          {
-            "name": "Kubernetes"
-          },
-          {
-            "name": "Helm"
-          },
-          {
-            "name": "OpenShift"
-          }
+          { "name": "Docker" },
+          { "name": "Docker Compose" },
+          { "name": "Kubernetes" },
+          { "name": "Helm" },
+          { "name": "OpenShift" }
         ],
         "order": 2
       },
       {
-        "id": "skill-3",
+        "id": "skill-cicd",
         "title": "CI/CD & automatisation",
         "icon": "workflow",
         "items": [
-          {
-            "name": "GitLab CI/CD"
-          },
-          {
-            "name": "Jenkins"
-          },
-          {
-            "name": "Ansible"
-          },
-          {
-            "name": "Terraform"
-          },
-          {
-            "name": "GitHub Actions"
-          },
-          {
-            "name": "Argo CD"
-          },
-          {
-            "name": "Puppet"
-          }
+          { "name": "GitLab CI/CD" },
+          { "name": "Jenkins" },
+          { "name": "GitHub Actions" },
+          { "name": "Ansible" },
+          { "name": "Terraform" },
+          { "name": "Argo CD" },
+          { "name": "Puppet" }
         ],
         "order": 3
       },
       {
-        "id": "skill-4",
-        "title": "Systèmes & réseaux",
-        "icon": "server",
+        "id": "skill-observability",
+        "title": "Observabilité, qualité & sécurité",
+        "icon": "activity",
         "items": [
-          {
-            "name": "Linux"
-          },
-          {
-            "name": "Red Hat"
-          },
-          {
-            "name": "Ubuntu"
-          },
-          {
-            "name": "TCP/IP"
-          },
-          {
-            "name": "VLAN"
-          },
-          {
-            "name": "OSPF"
-          },
-          {
-            "name": "Cisco Packet Tracer"
-          },
-          {
-            "name": "Réseaux (CCNA niveau 3)"
-          }
+          { "name": "Prometheus" },
+          { "name": "Grafana" },
+          { "name": "SonarQube" },
+          { "name": "Trivy" },
+          { "name": "HashiCorp Vault" }
         ],
         "order": 4
       },
       {
-        "id": "skill-5",
-        "title": "Observabilité, qualité & sécurité",
-        "icon": "activity",
+        "id": "skill-systems-networks",
+        "title": "Systèmes & réseaux",
+        "icon": "server",
         "items": [
-          {
-            "name": "Prometheus"
-          },
-          {
-            "name": "Grafana"
-          },
-          {
-            "name": "SonarQube"
-          },
-          {
-            "name": "Trivy"
-          },
-          {
-            "name": "HashiCorp Vault"
-          }
+          { "name": "Linux" },
+          { "name": "Red Hat" },
+          { "name": "Ubuntu" },
+          { "name": "TCP/IP" },
+          { "name": "VLAN" },
+          { "name": "OSPF" },
+          { "name": "Cisco Networking (CCNA)" },
+          { "name": "Cisco Packet Tracer" }
         ],
         "order": 5
       },
       {
-        "id": "skill-6",
+        "id": "skill-languages",
         "title": "Langages & scripting",
         "icon": "code",
         "items": [
-          {
-            "name": "Python"
-          },
-          {
-            "name": "Bash"
-          },
-          {
-            "name": "Java"
-          },
-          {
-            "name": "C"
-          },
-          {
-            "name": "C++"
-          },
-          {
-            "name": "JavaScript"
-          },
-          {
-            "name": "PHP"
-          }
+          { "name": "Python" },
+          { "name": "Bash" },
+          { "name": "Java" },
+          { "name": "C" },
+          { "name": "C++" },
+          { "name": "JavaScript" },
+          { "name": "TypeScript" },
+          { "name": "PHP" }
         ],
         "order": 6
       },
       {
-        "id": "skill-7",
+        "id": "skill-backend",
         "title": "Backend & API",
-        "icon": "code",
+        "icon": "server",
         "items": [
-          {
-            "name": "NestJS"
-          },
-          {
-            "name": "Spring Boot"
-          },
-          {
-            "name": "Laravel"
-          },
-          {
-            "name": "REST"
-          },
-          {
-            "name": "GraphQL"
-          },
-          {
-            "name": "SOAP"
-          }
+          { "name": "Spring Boot" },
+          { "name": "NestJS" },
+          { "name": "Laravel" },
+          { "name": "REST" },
+          { "name": "GraphQL" },
+          { "name": "SOAP" }
         ],
         "order": 7
       },
       {
-        "id": "skill-8",
+        "id": "skill-frontend",
         "title": "Interfaces web & mobile",
-        "icon": "code",
+        "icon": "globe",
         "items": [
-          {
-            "name": "HTML"
-          },
-          {
-            "name": "CSS"
-          },
-          {
-            "name": "Next.js"
-          },
-          {
-            "name": "Angular"
-          },
-          {
-            "name": "Android Studio"
-          }
+          { "name": "Next.js" },
+          { "name": "Angular" },
+          { "name": "HTML5" },
+          { "name": "CSS3" },
+          { "name": "Android Studio" }
         ],
         "order": 8
       },
       {
-        "id": "skill-9",
+        "id": "skill-databases",
         "title": "Bases de données",
-        "icon": "server",
+        "icon": "layers",
         "items": [
-          {
-            "name": "PostgreSQL"
-          },
-          {
-            "name": "MySQL"
-          },
-          {
-            "name": "Oracle Database"
-          },
-          {
-            "name": "SQL"
-          },
-          {
-            "name": "PL/SQL"
-          }
+          { "name": "PostgreSQL" },
+          { "name": "MySQL" },
+          { "name": "Oracle Database" },
+          { "name": "SQL & PL/SQL" }
         ],
         "order": 9
       },
       {
-        "id": "skill-10",
-        "title": "Systèmes embarqués & IoT",
-        "icon": "server",
+        "id": "skill-embedded-electronics",
+        "title": "Systèmes embarqués, IoT & électronique",
+        "icon": "activity",
         "items": [
-          {
-            "name": "ESP32"
-          },
-          {
-            "name": "STM32"
-          },
-          {
-            "name": "Raspberry Pi"
-          },
-          {
-            "name": "Arduino"
-          },
-          {
-            "name": "FPGA"
-          },
-          {
-            "name": "NodeMCU ESP8266"
-          },
-          {
-            "name": "RS485"
-          },
-          {
-            "name": "Wiegand"
-          }
+          { "name": "ESP32" },
+          { "name": "STM32" },
+          { "name": "Raspberry Pi" },
+          { "name": "Arduino" },
+          { "name": "NodeMCU ESP8266" },
+          { "name": "FPGA" },
+          { "name": "VHDL" },
+          { "name": "MATLAB" },
+          { "name": "Proteus" },
+          { "name": "Altium Designer" },
+          { "name": "Quartus" },
+          { "name": "RS485" },
+          { "name": "Wiegand" }
         ],
         "order": 10
       },
       {
-        "id": "skill-11",
-        "title": "Électronique & simulation",
-        "icon": "activity",
+        "id": "skill-tools-collaboration",
+        "title": "Outils, conception & gestion de projet",
+        "icon": "check",
         "items": [
-          {
-            "name": "VHDL"
-          },
-          {
-            "name": "MATLAB"
-          },
-          {
-            "name": "Quartus"
-          },
-          {
-            "name": "Proteus"
-          },
-          {
-            "name": "Altium Designer"
-          }
+          { "name": "Git" },
+          { "name": "GitHub" },
+          { "name": "GitLab" },
+          { "name": "Visual Studio" },
+          { "name": "Jira" },
+          { "name": "Scrum" },
+          { "name": "Figma" }
         ],
         "order": 11
-      },
-      {
-        "id": "skill-12",
-        "title": "Outils de développement",
-        "icon": "code",
-        "items": [
-          {
-            "name": "Git"
-          },
-          {
-            "name": "GitHub"
-          },
-          {
-            "name": "GitLab"
-          },
-          {
-            "name": "Visual Studio"
-          },
-          {
-            "name": "XAMPP"
-          },
-          {
-            "name": "SDL"
-          }
-        ],
-        "order": 12
-      },
-      {
-        "id": "skill-13",
-        "title": "Conception & collaboration",
-        "icon": "workflow",
-        "items": [
-          {
-            "name": "Figma"
-          },
-          {
-            "name": "Scrum"
-          },
-          {
-            "name": "Jira"
-          }
-        ],
-        "order": 13
       }
     ],
     "experiences": [
@@ -1339,330 +1173,164 @@ export const contentData: Record<Locale, LocaleContent> = {
     ],
     "skills": [
       {
-        "id": "skill-1",
-        "title": "Cloud & infrastructure",
+        "id": "skill-cloud",
+        "title": "Cloud & Infrastructure",
         "icon": "cloud",
         "items": [
-          {
-            "name": "AWS"
-          },
-          {
-            "name": "Microsoft Azure"
-          },
-          {
-            "name": "Oracle Cloud"
-          },
-          {
-            "name": "OpenStack"
-          }
+          { "name": "AWS" },
+          { "name": "Microsoft Azure" },
+          { "name": "Oracle Cloud" },
+          { "name": "OpenStack" }
         ],
         "order": 1
       },
       {
-        "id": "skill-2",
-        "title": "Containers & orchestration",
+        "id": "skill-containers",
+        "title": "Containers & Orchestration",
         "icon": "layers",
         "items": [
-          {
-            "name": "Docker"
-          },
-          {
-            "name": "Docker Compose"
-          },
-          {
-            "name": "Kubernetes"
-          },
-          {
-            "name": "Helm"
-          },
-          {
-            "name": "OpenShift"
-          }
+          { "name": "Docker" },
+          { "name": "Docker Compose" },
+          { "name": "Kubernetes" },
+          { "name": "Helm" },
+          { "name": "OpenShift" }
         ],
         "order": 2
       },
       {
-        "id": "skill-3",
-        "title": "CI/CD & automation",
+        "id": "skill-cicd",
+        "title": "CI/CD & Automation",
         "icon": "workflow",
         "items": [
-          {
-            "name": "GitLab CI/CD"
-          },
-          {
-            "name": "Jenkins"
-          },
-          {
-            "name": "Ansible"
-          },
-          {
-            "name": "Terraform"
-          },
-          {
-            "name": "GitHub Actions"
-          },
-          {
-            "name": "Argo CD"
-          },
-          {
-            "name": "Puppet"
-          }
+          { "name": "GitLab CI/CD" },
+          { "name": "Jenkins" },
+          { "name": "GitHub Actions" },
+          { "name": "Ansible" },
+          { "name": "Terraform" },
+          { "name": "Argo CD" },
+          { "name": "Puppet" }
         ],
         "order": 3
       },
       {
-        "id": "skill-4",
-        "title": "Systems & networking",
-        "icon": "server",
+        "id": "skill-observability",
+        "title": "Observability, Quality & Security",
+        "icon": "activity",
         "items": [
-          {
-            "name": "Linux"
-          },
-          {
-            "name": "Red Hat"
-          },
-          {
-            "name": "Ubuntu"
-          },
-          {
-            "name": "TCP/IP"
-          },
-          {
-            "name": "VLAN"
-          },
-          {
-            "name": "OSPF"
-          },
-          {
-            "name": "Cisco Packet Tracer"
-          },
-          {
-            "name": "Réseaux (CCNA niveau 3)"
-          }
+          { "name": "Prometheus" },
+          { "name": "Grafana" },
+          { "name": "SonarQube" },
+          { "name": "Trivy" },
+          { "name": "HashiCorp Vault" }
         ],
         "order": 4
       },
       {
-        "id": "skill-5",
-        "title": "Observability, quality & security",
-        "icon": "activity",
+        "id": "skill-systems-networks",
+        "title": "Systems & Networks",
+        "icon": "server",
         "items": [
-          {
-            "name": "Prometheus"
-          },
-          {
-            "name": "Grafana"
-          },
-          {
-            "name": "SonarQube"
-          },
-          {
-            "name": "Trivy"
-          },
-          {
-            "name": "HashiCorp Vault"
-          }
+          { "name": "Linux" },
+          { "name": "Red Hat" },
+          { "name": "Ubuntu" },
+          { "name": "TCP/IP" },
+          { "name": "VLAN" },
+          { "name": "OSPF" },
+          { "name": "Cisco Networking (CCNA)" },
+          { "name": "Cisco Packet Tracer" }
         ],
         "order": 5
       },
       {
-        "id": "skill-6",
-        "title": "Languages & scripting",
+        "id": "skill-languages",
+        "title": "Languages & Scripting",
         "icon": "code",
         "items": [
-          {
-            "name": "Python"
-          },
-          {
-            "name": "Bash"
-          },
-          {
-            "name": "Java"
-          },
-          {
-            "name": "C"
-          },
-          {
-            "name": "C++"
-          },
-          {
-            "name": "JavaScript"
-          },
-          {
-            "name": "PHP"
-          }
+          { "name": "Python" },
+          { "name": "Bash" },
+          { "name": "Java" },
+          { "name": "C" },
+          { "name": "C++" },
+          { "name": "JavaScript" },
+          { "name": "TypeScript" },
+          { "name": "PHP" }
         ],
         "order": 6
       },
       {
-        "id": "skill-7",
+        "id": "skill-backend",
         "title": "Backend & APIs",
-        "icon": "code",
+        "icon": "server",
         "items": [
-          {
-            "name": "NestJS"
-          },
-          {
-            "name": "Spring Boot"
-          },
-          {
-            "name": "Laravel"
-          },
-          {
-            "name": "REST"
-          },
-          {
-            "name": "GraphQL"
-          },
-          {
-            "name": "SOAP"
-          }
+          { "name": "Spring Boot" },
+          { "name": "NestJS" },
+          { "name": "Laravel" },
+          { "name": "REST" },
+          { "name": "GraphQL" },
+          { "name": "SOAP" }
         ],
         "order": 7
       },
       {
-        "id": "skill-8",
-        "title": "Web & mobile interfaces",
-        "icon": "code",
+        "id": "skill-frontend",
+        "title": "Web & Mobile Interfaces",
+        "icon": "globe",
         "items": [
-          {
-            "name": "HTML"
-          },
-          {
-            "name": "CSS"
-          },
-          {
-            "name": "Next.js"
-          },
-          {
-            "name": "Angular"
-          },
-          {
-            "name": "Android Studio"
-          }
+          { "name": "Next.js" },
+          { "name": "Angular" },
+          { "name": "HTML5" },
+          { "name": "CSS3" },
+          { "name": "Android Studio" }
         ],
         "order": 8
       },
       {
-        "id": "skill-9",
+        "id": "skill-databases",
         "title": "Databases",
-        "icon": "server",
+        "icon": "layers",
         "items": [
-          {
-            "name": "PostgreSQL"
-          },
-          {
-            "name": "MySQL"
-          },
-          {
-            "name": "Oracle Database"
-          },
-          {
-            "name": "SQL"
-          },
-          {
-            "name": "PL/SQL"
-          }
+          { "name": "PostgreSQL" },
+          { "name": "MySQL" },
+          { "name": "Oracle Database" },
+          { "name": "SQL & PL/SQL" }
         ],
         "order": 9
       },
       {
-        "id": "skill-10",
-        "title": "Embedded systems & IoT",
-        "icon": "server",
+        "id": "skill-embedded-electronics",
+        "title": "Embedded Systems, IoT & Electronics",
+        "icon": "activity",
         "items": [
-          {
-            "name": "ESP32"
-          },
-          {
-            "name": "STM32"
-          },
-          {
-            "name": "Raspberry Pi"
-          },
-          {
-            "name": "Arduino"
-          },
-          {
-            "name": "FPGA"
-          },
-          {
-            "name": "NodeMCU ESP8266"
-          },
-          {
-            "name": "RS485"
-          },
-          {
-            "name": "Wiegand"
-          }
+          { "name": "ESP32" },
+          { "name": "STM32" },
+          { "name": "Raspberry Pi" },
+          { "name": "Arduino" },
+          { "name": "NodeMCU ESP8266" },
+          { "name": "FPGA" },
+          { "name": "VHDL" },
+          { "name": "MATLAB" },
+          { "name": "Proteus" },
+          { "name": "Altium Designer" },
+          { "name": "Quartus" },
+          { "name": "RS485" },
+          { "name": "Wiegand" }
         ],
         "order": 10
       },
       {
-        "id": "skill-11",
-        "title": "Electronics & simulation",
-        "icon": "activity",
+        "id": "skill-tools-collaboration",
+        "title": "Tools, Design & Project Management",
+        "icon": "check",
         "items": [
-          {
-            "name": "VHDL"
-          },
-          {
-            "name": "MATLAB"
-          },
-          {
-            "name": "Quartus"
-          },
-          {
-            "name": "Proteus"
-          },
-          {
-            "name": "Altium Designer"
-          }
+          { "name": "Git" },
+          { "name": "GitHub" },
+          { "name": "GitLab" },
+          { "name": "Visual Studio" },
+          { "name": "Jira" },
+          { "name": "Scrum" },
+          { "name": "Figma" }
         ],
         "order": 11
-      },
-      {
-        "id": "skill-12",
-        "title": "Development tools",
-        "icon": "code",
-        "items": [
-          {
-            "name": "Git"
-          },
-          {
-            "name": "GitHub"
-          },
-          {
-            "name": "GitLab"
-          },
-          {
-            "name": "Visual Studio"
-          },
-          {
-            "name": "XAMPP"
-          },
-          {
-            "name": "SDL"
-          }
-        ],
-        "order": 12
-      },
-      {
-        "id": "skill-13",
-        "title": "Design & collaboration",
-        "icon": "workflow",
-        "items": [
-          {
-            "name": "Figma"
-          },
-          {
-            "name": "Scrum"
-          },
-          {
-            "name": "Jira"
-          }
-        ],
-        "order": 13
       }
     ],
     "experiences": [
