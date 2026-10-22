@@ -1,4 +1,4 @@
-# DRIRA Habib — Portfolio
+# Habib Drira — Portfolio
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.3-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-61dafb?style=flat-square&logo=react)](https://react.dev/)

@@ -142,7 +142,7 @@ export function Header({ locale, name, role = 'Cloud & DevOps Engineer', github,
           aria-label={`${name} — ${locale === 'fr' ? 'Accueil' : 'Home'}`}
         >
           <span className="brand-badge" aria-hidden="true">
-            DH
+            HD
           </span>
           <span className="brand-info">
             <span className="brand-name">{name}</span>

@@ -44,7 +44,7 @@ export default async function Layout({ children, params }: { children: React.Rea
         <a className="skip-link" href="#main-content">{t.skip}</a>
         <Header
           locale={currentLocale}
-          name={profile.name || "DRIRA Habib"}
+          name={profile.name || "Habib Drira"}
           role="Cloud & DevOps Engineer"
           github={profile.github}
           linkedin={profile.linkedin}
