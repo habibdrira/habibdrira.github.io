@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { Icon } from './Icon'
 
 type Props = {
@@ -38,9 +38,6 @@ export function Header({ locale, name, role = 'Cloud & DevOps Engineer', github,
     sectionKeys.some(section => section === key)
   )
 
-  const isScrollingRef = useRef(false)
-  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null)
-
   useEffect(() => {
     if (!isHome || typeof window === 'undefined') {
       setActiveSection('')
@@ -49,32 +46,37 @@ export function Header({ locale, name, role = 'Cloud & DevOps Engineer', github,
 
     let ticking = false
     const handleScroll = () => {
-      if (isScrollingRef.current) return
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          if (isScrollingRef.current) {
-            ticking = false
-            return
-          }
-          const scrollPos = window.scrollY + 100
-          // If near the top, no link is active
-          if (window.scrollY < 120) {
+          // If in the hero area, no link is highlighted
+          if (window.scrollY < 150) {
             setActiveSection('')
             ticking = false
             return
           }
+
+          // If reached the bottom of the page, activate the last link
+          const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60
+          if (isAtBottom && links.length > 0) {
+            setActiveSection(links[links.length - 1])
+            ticking = false
+            return
+          }
+
+          // Detect active section using getBoundingClientRect relative to viewport
+          const threshold = 140
           let current = ''
           for (let i = links.length - 1; i >= 0; i--) {
-            const key = links[i]
-            const el = document.getElementById(key)
+            const el = document.getElementById(links[i])
             if (el) {
-              const top = el.offsetTop
-              if (scrollPos >= top) {
-                current = key
+              const rect = el.getBoundingClientRect()
+              if (rect.top <= threshold) {
+                current = links[i]
                 break
               }
             }
           }
+
           setActiveSection(current)
           ticking = false
         })
@@ -86,7 +88,6 @@ export function Header({ locale, name, role = 'Cloud & DevOps Engineer', github,
     handleScroll()
     return () => {
       window.removeEventListener('scroll', handleScroll)
-      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current)
     }
   }, [isHome, links])
 
@@ -103,7 +104,6 @@ export function Header({ locale, name, role = 'Cloud & DevOps Engineer', github,
     const el = typeof document !== 'undefined' ? document.getElementById(key) : null
     if (el) {
       e.preventDefault()
-      isScrollingRef.current = true
       setActiveSection(key)
       try {
         window.history.pushState(null, '', `#${key}`)
@@ -117,11 +117,6 @@ export function Header({ locale, name, role = 'Cloud & DevOps Engineer', github,
         top: targetScroll,
         behavior: 'smooth'
       })
-
-      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current)
-      scrollTimeoutRef.current = setTimeout(() => {
-        isScrollingRef.current = false
-      }, 850)
     }
   }
 
