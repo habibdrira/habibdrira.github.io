@@ -15,7 +15,7 @@ export interface LocaleContent {
 export const contentData: Record<Locale, LocaleContent> = {
   "fr": {
     "profile": {
-      "name": "Habib Drira",
+      "name": "DRIRA Habib",
       "email": "habibdrira6@gmail.com",
       "phone": "+216 26 362 348",
       "github": "https://github.com/Habibdrira",
@@ -41,7 +41,7 @@ export const contentData: Record<Locale, LocaleContent> = {
           "level": "Courant"
         }
       ],
-      "seoDescription": "Habib Drira, ingénieur Cloud & DevOps à Tunis. Découvrez mes projets en automatisation, CI/CD, Docker, Kubernetes et infrastructure cloud.",
+      "seoDescription": "DRIRA Habib, ingénieur Cloud & DevOps à Tunis. Découvrez mes projets en automatisation, CI/CD, Docker, Kubernetes et infrastructure cloud.",
       "cvUrl": "/cv.pdf",
       "portraitUrl": "/portrait.png"
     },
@@ -748,7 +748,7 @@ export const contentData: Record<Locale, LocaleContent> = {
   },
   "en": {
     "profile": {
-      "name": "Habib Drira",
+      "name": "DRIRA Habib",
       "email": "habibdrira6@gmail.com",
       "phone": "+216 26 362 348",
       "github": "https://github.com/Habibdrira",
@@ -774,7 +774,7 @@ export const contentData: Record<Locale, LocaleContent> = {
           "level": "Fluent"
         }
       ],
-      "seoDescription": "Habib Drira, Cloud & DevOps engineer in Tunis. Explore my work in automation, CI/CD, Docker, Kubernetes and cloud infrastructure.",
+      "seoDescription": "DRIRA Habib, Cloud & DevOps engineer in Tunis. Explore my work in automation, CI/CD, Docker, Kubernetes and cloud infrastructure.",
       "cvUrl": "/cv.pdf",
       "portraitUrl": "/portrait.png"
     },

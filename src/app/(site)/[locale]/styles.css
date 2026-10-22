@@ -26,12 +26,26 @@ p { color:var(--muted); }
 .skip-link:focus { top:15px; }
 
 /* Navigation: equal side columns keep the links centred on the page. */
-.header { position:sticky; top:0; z-index:30; background:var(--bg); border-bottom:1px solid var(--line); }
-.header-inner { width:min(1440px,calc(100% - 64px)); min-height:80px; display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); align-items:center; gap:24px; }
-.brand { justify-self:start; font-size:17px; font-weight:650; letter-spacing:-.025em; white-space:nowrap; }
-.navigation { display:flex; align-items:center; justify-content:center; gap:22px; }
-.navigation a { font-size:14px; color:var(--muted); transition:color .15s; padding:10px 0; white-space:nowrap; }
-.navigation a:hover { color:var(--text); }
+.header { position:sticky; top:0; z-index:30; background:var(--bg); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); }
+.header-inner { width:min(1440px,calc(100% - 64px)); min-height:80px; display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:20px; }
+.brand { justify-self:start; display:flex; align-items:center; gap:12px; text-decoration:none; cursor:pointer; }
+.brand-badge { display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:10px; background:#141414; color:#ffffff; font-weight:800; font-size:13.5px; letter-spacing:.04em; flex-shrink:0; box-shadow:0 2px 8px rgba(0,0,0,.15); transition:transform .2s ease,box-shadow .2s ease; }
+[data-theme=dark] .brand-badge { background:#18191c; border:1px solid rgba(255,255,255,.15); box-shadow:0 2px 10px rgba(0,0,0,.4); }
+.brand:hover .brand-badge { transform:scale(1.05); }
+.brand-info { display:flex; flex-direction:column; justify-content:center; }
+.brand-name { font-size:15px; font-weight:700; color:var(--text); line-height:1.2; letter-spacing:-.015em; white-space:nowrap; }
+.brand-role { font-size:11px; font-weight:500; color:var(--muted); line-height:1.2; margin-top:2px; white-space:nowrap; }
+
+/* Center navigation pill container (krapp / modern capsule style) */
+.navigation-pill-wrapper { display:flex; align-items:center; justify-content:center; width:100%; }
+.navigation-pill { display:flex; align-items:center; gap:3px; padding:4px; border-radius:9999px; background:rgba(0,0,0,.04); border:1px solid rgba(0,0,0,.08); box-shadow:0 1px 4px rgba(0,0,0,.02); }
+[data-theme=dark] .navigation-pill { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); box-shadow:0 2px 12px rgba(0,0,0,.3); }
+.nav-pill-item { display:inline-flex; align-items:center; padding:6px 14px; font-size:13px; font-weight:500; color:var(--muted); border-radius:9999px; text-decoration:none; white-space:nowrap; transition:all .2s cubic-bezier(.16,1,.3,1); user-select:none; }
+.nav-pill-item:hover { color:var(--text); background:rgba(0,0,0,.05); }
+[data-theme=dark] .nav-pill-item:hover { color:#ffffff; background:rgba(255,255,255,.08); }
+.nav-pill-item.is-active { background:#ffffff; color:#111111; font-weight:600; box-shadow:0 2px 8px rgba(0,0,0,.08); }
+[data-theme=dark] .nav-pill-item.is-active { background:var(--surface); color:var(--accent); border:1px solid rgba(0,210,255,.28); box-shadow:0 0 12px rgba(0,210,255,.14); }
+
 .header-actions { justify-self:end; display:flex; align-items:center; gap:10px; }
 .header-socials { display:flex; align-items:center; gap:4px; }
 .header-socials a { color:var(--muted); border-radius:6px; }
@@ -233,9 +247,10 @@ p { color:var(--muted); }
   .header-inner { display:flex; }
   .header-actions { margin-left:auto; }
   .menu-button { display:grid; }
-  .navigation { display:none; position:absolute; top:80px; left:0; right:0; padding:16px 32px 24px; background:var(--bg); border-bottom:1px solid var(--line); }
-  .navigation.is-open { display:flex; flex-direction:column; align-items:stretch; gap:0; }
-  .navigation a { padding:12px 0; font-size:16px; }
+  .navigation-pill-wrapper { display:none; position:absolute; top:80px; left:0; right:0; padding:16px 24px 24px; background:var(--bg); border-bottom:1px solid var(--line); box-shadow:0 12px 30px rgba(0,0,0,.25); }
+  .navigation-pill-wrapper.is-open { display:flex; }
+  .navigation-pill-wrapper.is-open .navigation-pill { flex-direction:column; width:100%; border-radius:14px; padding:8px; gap:4px; }
+  .navigation-pill-wrapper.is-open .nav-pill-item { width:100%; justify-content:flex-start; padding:10px 16px; font-size:15px; border-radius:8px; }
 }
 @media(max-width:1100px) {
   .hero { gap:32px; }

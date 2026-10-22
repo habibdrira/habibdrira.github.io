@@ -2,12 +2,13 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Icon } from './Icon'
 
 type Props = {
   locale: 'fr' | 'en'
   name: string
+  role?: string
   github?: string | null
   linkedin?: string | null
   labels: {
@@ -25,8 +26,9 @@ type Props = {
   sections: string[]
 }
 
-export function Header({ locale, name, github, linkedin, labels, sections }: Props) {
+export function Header({ locale, name, role = 'Cloud & DevOps Engineer', github, linkedin, labels, sections }: Props) {
   const [open, setOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState<string>('top')
   const pathname = usePathname() || `/${locale}/`
   const other = locale === 'fr' ? 'en' : 'fr'
   const isHome = pathname === `/${locale}` || pathname === `/${locale}/` || pathname === '/'
@@ -35,6 +37,33 @@ export function Header({ locale, name, github, linkedin, labels, sections }: Pro
   const links = sections.filter((key): key is typeof sectionKeys[number] =>
     sectionKeys.some(section => section === key)
   )
+
+  useEffect(() => {
+    if (!isHome || typeof window === 'undefined') return
+
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + 140
+      if (window.scrollY < 120) {
+        setActiveSection('top')
+        return
+      }
+      for (let i = links.length - 1; i >= 0; i--) {
+        const key = links[i]
+        const el = document.getElementById(key)
+        if (el) {
+          const top = el.offsetTop
+          if (scrollPos >= top) {
+            setActiveSection(key)
+            return
+          }
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [isHome, links])
 
   function toggleTheme() {
     const theme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light'
@@ -46,10 +75,23 @@ export function Header({ locale, name, github, linkedin, labels, sections }: Pro
 
   function handleNavClick(e: React.MouseEvent<HTMLAnchorElement>, key: string) {
     setOpen(false)
+    if (key === 'top') {
+      if (isHome) {
+        e.preventDefault()
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+        try {
+          window.history.pushState(null, '', `/${locale}/`)
+        } catch {}
+        setActiveSection('top')
+      }
+      return
+    }
+
     const el = typeof document !== 'undefined' ? document.getElementById(key) : null
     if (el) {
       e.preventDefault()
       el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      setActiveSection(key)
       try {
         window.history.pushState(null, '', `#${key}`)
       } catch {}
@@ -64,6 +106,7 @@ export function Header({ locale, name, github, linkedin, labels, sections }: Pro
       try {
         window.history.pushState(null, '', `/${locale}/`)
       } catch {}
+      setActiveSection('top')
     }
   }
 
@@ -76,33 +119,55 @@ export function Header({ locale, name, github, linkedin, labels, sections }: Pro
           onClick={handleBrandClick}
           aria-label={`${name} — ${locale === 'fr' ? 'Accueil' : 'Home'}`}
         >
-          {name}
+          <span className="brand-badge" aria-hidden="true">
+            DH
+          </span>
+          <span className="brand-info">
+            <span className="brand-name">{name}</span>
+            <span className="brand-role">{role}</span>
+          </span>
         </Link>
+
         <nav
-          className={`navigation ${open ? 'is-open' : ''}`}
+          className={`navigation-pill-wrapper ${open ? 'is-open' : ''}`}
           id="main-navigation"
           aria-label={locale === 'fr' ? 'Navigation principale' : 'Main navigation'}
         >
-          {links.map(key => (
+          <div className="navigation-pill">
             <a
-              key={key}
-              href={isHome ? `#${key}` : `/${locale}/#${key}`}
-              onClick={e => handleNavClick(e, key)}
+              href={isHome ? '#top' : `/${locale}/`}
+              className={`nav-pill-item ${activeSection === 'top' ? 'is-active' : ''}`}
+              onClick={e => handleNavClick(e, 'top')}
             >
-              {labels[key]}
+              {locale === 'fr' ? 'Accueil' : 'Home'}
             </a>
-          ))}
+            {links.map(key => {
+              const label = key === 'about' ? (locale === 'fr' ? 'À propos' : 'About') : labels[key]
+              const isActive = activeSection === key
+              return (
+                <a
+                  key={key}
+                  href={isHome ? `#${key}` : `/${locale}/#${key}`}
+                  className={`nav-pill-item ${isActive ? 'is-active' : ''}`}
+                  onClick={e => handleNavClick(e, key)}
+                >
+                  {label}
+                </a>
+              )
+            })}
+          </div>
         </nav>
+
         <div className="header-actions">
           <div className="header-socials">
             {github && (
               <a className="icon-button" href={github} target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub">
-                <Icon name="github" size={21} />
+                <Icon name="github" size={20} />
               </a>
             )}
             {linkedin && (
               <a className="icon-button" href={linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn">
-                <Icon name="linkedin" size={21} />
+                <Icon name="linkedin" size={20} />
               </a>
             )}
           </div>
