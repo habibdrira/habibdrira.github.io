@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       title: profile.name,
       description: profile.seoDescription || '',
     },
-    icons: { icon: '/favicon.svg' },
+    icons: { icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }, { url: '/favicon.png', type: 'image/png' }], apple: '/favicon.png' },
   }
 }
 
