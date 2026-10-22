@@ -38,13 +38,13 @@ p { color:var(--muted); }
 
 /* Center navigation pill container (krapp / modern capsule style) */
 .navigation-pill-wrapper { display:flex; align-items:center; justify-content:center; width:100%; }
-.navigation-pill { display:flex; align-items:center; gap:3px; padding:4px; border-radius:9999px; background:rgba(0,0,0,.04); border:1px solid rgba(0,0,0,.08); box-shadow:0 1px 4px rgba(0,0,0,.02); }
-[data-theme=dark] .navigation-pill { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); box-shadow:0 2px 12px rgba(0,0,0,.3); }
-.nav-pill-item { display:inline-flex; align-items:center; padding:6px 14px; font-size:13px; font-weight:500; color:var(--muted); border-radius:9999px; text-decoration:none; white-space:nowrap; transition:all .2s cubic-bezier(.16,1,.3,1); user-select:none; }
-.nav-pill-item:hover { color:var(--text); background:rgba(0,0,0,.05); }
-[data-theme=dark] .nav-pill-item:hover { color:#ffffff; background:rgba(255,255,255,.08); }
+.navigation-pill { display:flex; align-items:center; gap:2px; padding:3px 5px; border-radius:9999px; background:rgba(0,0,0,.03); border:1px solid rgba(0,0,0,.07); }
+[data-theme=dark] .navigation-pill { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); backdrop-filter:blur(10px); }
+.nav-pill-item { display:inline-flex; align-items:center; padding:5px 12px; font-size:13px; font-weight:500; color:var(--muted); border-radius:9999px; text-decoration:none; white-space:nowrap; transition:all .2s cubic-bezier(.16,1,.3,1); user-select:none; }
+.nav-pill-item:hover { color:var(--text); background:rgba(0,0,0,.04); }
+[data-theme=dark] .nav-pill-item:hover { color:#ffffff; background:rgba(255,255,255,.06); }
 .nav-pill-item.is-active { background:#ffffff; color:#111111; font-weight:600; box-shadow:0 2px 8px rgba(0,0,0,.08); }
-[data-theme=dark] .nav-pill-item.is-active { background:var(--surface); color:var(--accent); border:1px solid rgba(0,210,255,.28); box-shadow:0 0 12px rgba(0,210,255,.14); }
+[data-theme=dark] .nav-pill-item.is-active { background:var(--surface); color:var(--accent); border:1px solid rgba(0,210,255,.28); box-shadow:0 0 10px rgba(0,210,255,.12); }
 
 .header-actions { justify-self:end; display:flex; align-items:center; gap:10px; }
 .header-socials { display:flex; align-items:center; gap:4px; }
@@ -110,7 +110,7 @@ p { color:var(--muted); }
 .catalog-heading p { margin-top:18px; }
 .catalog-count { display:inline-block; font-size:12px; color:var(--accent); padding:5px 12px; border:1px solid var(--line); border-radius:20px; margin-top:20px; }
 .project-stack h4 { font-size:12px; font-weight:500; color:var(--subtle); }
-.section { padding-block:76px; border-top:1px solid var(--line); scroll-margin-top:80px; }
+.section { padding-block:76px; border-top:1px solid var(--line); scroll-margin-top:96px; }
 .section-heading { text-align:center; max-width:680px; margin:0 auto 38px; }
 .section-heading .eyebrow { justify-content:center; font-size:10px; letter-spacing:.12em; }
 .section-heading h2 { margin-top:0; }

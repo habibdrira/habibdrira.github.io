@@ -28,7 +28,7 @@ type Props = {
 
 export function Header({ locale, name, role = 'Cloud & DevOps Engineer', github, linkedin, labels, sections }: Props) {
   const [open, setOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState<string>('top')
+  const [activeSection, setActiveSection] = useState<string>('')
   const pathname = usePathname() || `/${locale}/`
   const other = locale === 'fr' ? 'en' : 'fr'
   const isHome = pathname === `/${locale}` || pathname === `/${locale}/` || pathname === '/'
@@ -39,24 +39,38 @@ export function Header({ locale, name, role = 'Cloud & DevOps Engineer', github,
   )
 
   useEffect(() => {
-    if (!isHome || typeof window === 'undefined') return
+    if (!isHome || typeof window === 'undefined') {
+      setActiveSection('')
+      return
+    }
 
+    let ticking = false
     const handleScroll = () => {
-      const scrollPos = window.scrollY + 140
-      if (window.scrollY < 120) {
-        setActiveSection('top')
-        return
-      }
-      for (let i = links.length - 1; i >= 0; i--) {
-        const key = links[i]
-        const el = document.getElementById(key)
-        if (el) {
-          const top = el.offsetTop
-          if (scrollPos >= top) {
-            setActiveSection(key)
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollPos = window.scrollY + 130
+          // If near the top of the page, no section link should be highlighted
+          if (window.scrollY < 180) {
+            setActiveSection('')
+            ticking = false
             return
           }
-        }
+          let current = ''
+          for (let i = links.length - 1; i >= 0; i--) {
+            const key = links[i]
+            const el = document.getElementById(key)
+            if (el) {
+              const top = el.offsetTop
+              if (scrollPos >= top) {
+                current = key
+                break
+              }
+            }
+          }
+          setActiveSection(current)
+          ticking = false
+        })
+        ticking = true
       }
     }
 
@@ -75,18 +89,6 @@ export function Header({ locale, name, role = 'Cloud & DevOps Engineer', github,
 
   function handleNavClick(e: React.MouseEvent<HTMLAnchorElement>, key: string) {
     setOpen(false)
-    if (key === 'top') {
-      if (isHome) {
-        e.preventDefault()
-        window.scrollTo({ top: 0, behavior: 'smooth' })
-        try {
-          window.history.pushState(null, '', `/${locale}/`)
-        } catch {}
-        setActiveSection('top')
-      }
-      return
-    }
-
     const el = typeof document !== 'undefined' ? document.getElementById(key) : null
     if (el) {
       e.preventDefault()
@@ -106,7 +108,7 @@ export function Header({ locale, name, role = 'Cloud & DevOps Engineer', github,
       try {
         window.history.pushState(null, '', `/${locale}/`)
       } catch {}
-      setActiveSection('top')
+      setActiveSection('')
     }
   }
 
@@ -134,13 +136,6 @@ export function Header({ locale, name, role = 'Cloud & DevOps Engineer', github,
           aria-label={locale === 'fr' ? 'Navigation principale' : 'Main navigation'}
         >
           <div className="navigation-pill">
-            <a
-              href={isHome ? '#top' : `/${locale}/`}
-              className={`nav-pill-item ${activeSection === 'top' ? 'is-active' : ''}`}
-              onClick={e => handleNavClick(e, 'top')}
-            >
-              {locale === 'fr' ? 'Accueil' : 'Home'}
-            </a>
             {links.map(key => {
               const label = key === 'about' ? (locale === 'fr' ? 'À propos' : 'About') : labels[key]
               const isActive = activeSection === key
