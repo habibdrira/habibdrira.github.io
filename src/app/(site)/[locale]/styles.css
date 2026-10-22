@@ -41,7 +41,7 @@ p { color:var(--muted); }
 .navigation a { position:relative; font-size:14px; font-weight:500; color:var(--muted); text-decoration:none; padding:10px 0; white-space:nowrap; transition:color .2s ease,text-shadow .2s ease; }
 .navigation a:hover { color:var(--text); }
 .navigation a.is-active { color:var(--accent); font-weight:600; text-shadow:0 0 12px color-mix(in srgb, var(--accent) 40%, transparent); }
-[data-theme=light] .navigation a.is-active { color:var(--text); font-weight:700; text-shadow:none; }
+[data-theme=light] .navigation a.is-active { color:var(--accent); font-weight:600; text-shadow:none; }
 
 .header-actions { justify-self:end; display:flex; align-items:center; gap:10px; }
 .header-socials { display:flex; align-items:center; gap:4px; }
