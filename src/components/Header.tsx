@@ -49,7 +49,7 @@ export function Header({ locale, name, role = 'Cloud & DevOps Engineer', github,
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const scrollPos = window.scrollY + 130
-          // If near the top of the page, no section link should be highlighted
+          // If near the top, no link is active
           if (window.scrollY < 180) {
             setActiveSection('')
             ticking = false
@@ -131,26 +131,24 @@ export function Header({ locale, name, role = 'Cloud & DevOps Engineer', github,
         </Link>
 
         <nav
-          className={`navigation-pill-wrapper ${open ? 'is-open' : ''}`}
+          className={`navigation ${open ? 'is-open' : ''}`}
           id="main-navigation"
           aria-label={locale === 'fr' ? 'Navigation principale' : 'Main navigation'}
         >
-          <div className="navigation-pill">
-            {links.map(key => {
-              const label = key === 'about' ? (locale === 'fr' ? 'À propos' : 'About') : labels[key]
-              const isActive = activeSection === key
-              return (
-                <a
-                  key={key}
-                  href={isHome ? `#${key}` : `/${locale}/#${key}`}
-                  className={`nav-pill-item ${isActive ? 'is-active' : ''}`}
-                  onClick={e => handleNavClick(e, key)}
-                >
-                  {label}
-                </a>
-              )
-            })}
-          </div>
+          {links.map(key => {
+            const label = key === 'about' ? (locale === 'fr' ? 'À propos' : 'About') : labels[key]
+            const isActive = isHome && activeSection === key
+            return (
+              <a
+                key={key}
+                href={isHome ? `#${key}` : `/${locale}/#${key}`}
+                className={`nav-link ${isActive ? 'is-active' : ''}`}
+                onClick={e => handleNavClick(e, key)}
+              >
+                {label}
+              </a>
+            )
+          })}
         </nav>
 
         <div className="header-actions">
