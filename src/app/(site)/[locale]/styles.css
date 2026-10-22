@@ -1,7 +1,7 @@
 :root { --bg:#111719; --surface:#171f22; --surface-2:#1c272b; --text:#eeeee8; --muted:#a4afb2; --subtle:#829296; --line:#2c383d; --accent:#b4d4e8; --accent-ink:#142830; --soft:#1c2b32; --green:#b5d1b6; --container:1200px; --header-height:81px; color-scheme:dark; }
 :root[data-theme=light] { --bg:#f5f5ef; --surface:#eceee8; --surface-2:#e2e8e4; --text:#19282e; --muted:#53656d; --subtle:#5e7077; --line:#cbd5d4; --accent:#265e7a; --accent-ink:#fff; --soft:#e1ebef; --green:#3c6845; color-scheme:light; }
 * { box-sizing:border-box; }
-html { scroll-behavior:smooth; scroll-padding-top:110px; }
+html { scroll-behavior:smooth; }
 body { margin:0; background:var(--bg); color:var(--text); font-family:'DM Sans Variable',Arial,sans-serif; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; }
 /* A single grid across the public site, using the existing palette in both themes. */
 body { background-image:linear-gradient(to right,color-mix(in srgb,var(--line) 10%,transparent) 1px,transparent 1px),linear-gradient(to bottom,color-mix(in srgb,var(--line) 10%,transparent) 1px,transparent 1px); background-size:64px 64px; }
@@ -40,8 +40,9 @@ p { color:var(--muted); }
 .navigation { display:flex; align-items:center; justify-content:center; gap:24px; }
 .navigation a { position:relative; font-size:14px; font-weight:500; color:var(--muted); text-decoration:none; padding:10px 0; white-space:nowrap; transition:color .2s ease,text-shadow .2s ease; }
 .navigation a:hover { color:var(--text); }
-.navigation a.is-active { color:var(--accent); font-weight:600; text-shadow:0 0 12px color-mix(in srgb, var(--accent) 40%, transparent); }
-[data-theme=light] .navigation a.is-active { color:var(--accent); font-weight:600; text-shadow:none; }
+.navigation a.is-active { color:var(--text); font-weight:600; }
+[data-theme=dark] .navigation a.is-active { color:#ffffff; font-weight:600; }
+[data-theme=light] .navigation a.is-active { color:#111111; font-weight:600; }
 
 .header-actions { justify-self:end; display:flex; align-items:center; gap:10px; }
 .header-socials { display:flex; align-items:center; gap:4px; }
@@ -107,7 +108,7 @@ p { color:var(--muted); }
 .catalog-heading p { margin-top:18px; }
 .catalog-count { display:inline-block; font-size:12px; color:var(--accent); padding:5px 12px; border:1px solid var(--line); border-radius:20px; margin-top:20px; }
 .project-stack h4 { font-size:12px; font-weight:500; color:var(--subtle); }
-.section { padding-block:76px; border-top:1px solid var(--line); scroll-margin-top:96px; }
+.section { padding-block:76px; border-top:1px solid var(--line); scroll-margin-top:81px; }
 .section-heading { text-align:center; max-width:680px; margin:0 auto 38px; }
 .section-heading .eyebrow { justify-content:center; font-size:10px; letter-spacing:.12em; }
 .section-heading h2 { margin-top:0; }
@@ -247,7 +248,8 @@ p { color:var(--muted); }
   .navigation { display:none; position:absolute; top:80px; left:0; right:0; padding:16px 32px 24px; background:var(--bg); border-bottom:1px solid var(--line); box-shadow:0 12px 30px rgba(0,0,0,.25); }
   .navigation.is-open { display:flex; flex-direction:column; align-items:stretch; gap:0; }
   .navigation a { padding:12px 0; font-size:16px; border-bottom:1px solid color-mix(in srgb, var(--line) 40%, transparent); }
-  .navigation a.is-active { color:var(--accent); font-weight:600; }
+  .navigation a.is-active { color:var(--text); font-weight:600; }
+  [data-theme=dark] .navigation a.is-active { color:#ffffff; font-weight:600; }
 }
 @media(max-width:1100px) {
   .hero { gap:32px; }
@@ -340,7 +342,7 @@ p { color:var(--muted); }
 
 
 /* Featured Technologies marquee (krapp.dev style) */
-.skills-marquee-section { padding-block:70px; overflow:hidden; }
+.skills-marquee-section { padding-block:70px 36px; overflow:hidden; }
 .text-center { text-align:center; }
 .text-center .section-heading { justify-content:center; }
 .eyebrow-badge { display:inline-block; font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); background:var(--soft); padding:6px 14px; border-radius:9999px; border:1px solid color-mix(in srgb,var(--accent) 30%,transparent); margin-bottom:14px; }

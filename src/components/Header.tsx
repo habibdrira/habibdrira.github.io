@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Icon } from './Icon'
 
 type Props = {
@@ -38,6 +38,9 @@ export function Header({ locale, name, role = 'Cloud & DevOps Engineer', github,
     sectionKeys.some(section => section === key)
   )
 
+  const isScrollingRef = useRef(false)
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
   useEffect(() => {
     if (!isHome || typeof window === 'undefined') {
       setActiveSection('')
@@ -46,11 +49,16 @@ export function Header({ locale, name, role = 'Cloud & DevOps Engineer', github,
 
     let ticking = false
     const handleScroll = () => {
+      if (isScrollingRef.current) return
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          const scrollPos = window.scrollY + 130
+          if (isScrollingRef.current) {
+            ticking = false
+            return
+          }
+          const scrollPos = window.scrollY + 100
           // If near the top, no link is active
-          if (window.scrollY < 180) {
+          if (window.scrollY < 120) {
             setActiveSection('')
             ticking = false
             return
@@ -76,7 +84,10 @@ export function Header({ locale, name, role = 'Cloud & DevOps Engineer', github,
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     handleScroll()
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current)
+    }
   }, [isHome, links])
 
   function toggleTheme() {
@@ -92,11 +103,25 @@ export function Header({ locale, name, role = 'Cloud & DevOps Engineer', github,
     const el = typeof document !== 'undefined' ? document.getElementById(key) : null
     if (el) {
       e.preventDefault()
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      isScrollingRef.current = true
       setActiveSection(key)
       try {
         window.history.pushState(null, '', `#${key}`)
       } catch {}
+
+      const headerOffset = 81
+      const elementTop = el.getBoundingClientRect().top + window.scrollY
+      const targetScroll = Math.max(0, elementTop - headerOffset)
+
+      window.scrollTo({
+        top: targetScroll,
+        behavior: 'smooth'
+      })
+
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current)
+      scrollTimeoutRef.current = setTimeout(() => {
+        isScrollingRef.current = false
+      }, 850)
     }
   }
 
