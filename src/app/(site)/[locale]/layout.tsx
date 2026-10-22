@@ -24,7 +24,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       title: profile.name,
       description: profile.seoDescription || '',
     },
-    icons: { icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }, { url: '/favicon.png', type: 'image/png' }], apple: '/favicon.png' },
+    icons: {
+      icon: [
+        { url: '/favicon.svg?v=hd', type: 'image/svg+xml' },
+        { url: '/favicon.png?v=hd', type: 'image/png' },
+      ],
+      apple: '/favicon.png?v=hd',
+    },
   }
 }
 
@@ -61,4 +67,3 @@ export default async function Layout({ children, params }: { children: React.Rea
     </html>
   )
 }
-
